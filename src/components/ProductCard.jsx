@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const ProductCard = ({ product }) => {
   return (
     <div className="border-2 border-stone-150 rounded-md  drop-shadow- p-2 w-[full%] flex justify-center items-center flex-col gap-1">
@@ -14,10 +14,13 @@ const ProductCard = ({ product }) => {
         <p className="text-basis">Rs. {product.price}</p>
       </div>
       <div className="flex gap-4">
-        <button className=" bg-[#131414] text-white text-xs rounded-md p-2">
-          Buy now
-        </button>
-        <button className=" bg-[#131414] text-white text-xs rounded-md p-2">
+        <Link to={`/product/${product.id}`}>
+          <button className=" bg-[#131414] text-white text-xs rounded-md p-2 hover:bg-slate-800">
+            Buy now
+          </button>
+        </Link>
+
+        <button className=" bg-[#131414] text-white text-xs rounded-md p-2 hover:bg-slate-800">
           Add to Cart
         </button>
       </div>
